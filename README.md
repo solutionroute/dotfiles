@@ -21,6 +21,17 @@ TODO:
 
 As a regular user run `./setup-dotfiles.sh`.
 
+## Neovim
 
+If you have not already done so, install or update Neovim python modules.
+I install them globally, YMMV:
+
+	cd ~
+	# latest pip and setuptools.
+	wget https://bootstrap.pypa.io/get-pip.py
+	sudo python get-pip.py 
+	sudo python3 get-pip.py 
+	sudo pip2 install neovim
+	sudo pip3 install neovim
 
 

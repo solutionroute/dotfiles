@@ -1,0 +1,6 @@
+# https://developer.gnome.org/gtk3/unstable/GtkSettings.html#GtkSettings--gtk-xft-dpi
+# Xft/DPI setting is 1024 x actual DPI (96, or 192 for Surface Pro)
+# Surface Pro HiDPI screen
+Xft/DPI 196608
+# Standard DPI monitors
+# Xft/DPI 94208

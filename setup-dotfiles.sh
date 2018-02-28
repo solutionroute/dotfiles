@@ -20,7 +20,7 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 # dpireset - used because I switch between HiDPI laptop and desktop monitors
 mkdir ~/bin
 cd ~/bin
-ln -s ~/dotfiles/scripts/dpireset.sh
+ln -s ~/dotfiles/xsettings/dpireset.sh
 ln -s ~/dotfiles/scripts/terminal.sh
 
 # LAST STEP

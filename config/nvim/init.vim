@@ -17,13 +17,16 @@ let g:vimspectrItalicComment='on'
 
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'neomake/neomake'
+"Plug 'neomake/neomake'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'fatih/vim-go'				" run once  :GoInstallBinaries
 Plug 'itchyny/lightline.vim'	
 Plug 'nightsense/vimspectr'
 Plug 'scrooloose/nerdcommenter'
 Plug 'ervandew/supertab'
+" added ale lint helper and lightline integration
+Plug 'w0rp/ale'
+Plug 'maximbaz/lightline-ale'
 
 call plug#end()
 
@@ -130,3 +133,32 @@ nnoremap N Nzzzv
 " formatting "
 " """"""""""""
 nnoremap <leader>f gwap
+
+" PLUGIN SPECIFIC -----------------------------------------
+" avoid annoying expand and collapse while typing
+let g:ale_sign_column_always = 1
+" alternatively only use it when saving...
+
+let g:lightline.component_expand = {
+      \  'linter_checking': 'lightline#ale#checking',
+      \  'linter_warnings': 'lightline#ale#warnings',
+      \  'linter_errors': 'lightline#ale#errors',
+      \  'linter_ok': 'lightline#ale#ok',
+      \ }
+
+let g:lightline.component_type = {
+      \     'linter_checking': 'warning',
+      \     'linter_warnings': 'warning',
+      \     'linter_errors': 'error',
+      \     'linter_ok': 'left',
+      \ }
+
+let g:lightline#ale#indicator_checking = "\uf110"
+let g:lightline#ale#indicator_warnings = "\uf071"
+let g:lightline#ale#indicator_errors = "\uf05e"
+let g:lightline#ale#indicator_ok = "\uf00c"
+
+"let g:lightline.active = { 'right': [[ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_ok' ]] }
+" Last but not least, generate help files
+packloadall
+silent! helptags all

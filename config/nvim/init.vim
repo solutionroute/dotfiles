@@ -14,19 +14,16 @@ let g:python3_host_prog='/usr/bin/python3'
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$\|\.pyc\|tags'
 let g:lightline = { 'colorscheme': 'seoul256', }
 let g:vimspectrItalicComment='on'
-let g:deoplete#enable_at_startup=1
 
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug 'neomake/neomake'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'fatih/vim-go', { 'do' : 'GoInstallBinaries' }
-Plug 'itchyny/lightline.vim'	" very configurable. 
+Plug 'fatih/vim-go'				" run once  :GoInstallBinaries
+Plug 'itchyny/lightline.vim'	
 Plug 'nightsense/vimspectr'
 Plug 'scrooloose/nerdcommenter'
-"Plug 'Shougo/deoplete.nvim'
-Plug 'Shougo/deoplete.nvim', { 'do' : ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'ervandew/supertab'
 
 call plug#end()
 
@@ -34,6 +31,9 @@ call plug#end()
 set termguicolors				" for truecolor terms
 set background=dark
 colorscheme vimspectrgrey-dark
+"colorscheme vimspectr210-dark
+"set background=light
+"colorscheme vimspectr0-light
 
 " tuning
 set noerrorbells				" no beeps
@@ -75,11 +75,6 @@ set formatoptions=qrn1
 au FileType go set noexpandtab
 let g:go_fmt_command="goimports"	" adds missing dependencies on save
 
-let g:deoplete#enable_at_startup = 1
-"if !exists('g:deoplete#omni#input_patterns')
-	  "let g:deoplete#omni#input_patterns = {}
-  "endif
-"let g:deoplete#disable_auto_complete = 1
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 " Autocommands ===============
@@ -99,9 +94,6 @@ set isfname-== 				" filename autocompletion, gf (go file) tweak
 " key mappings ===============
 " remapping leader to SPACE from "\" makes for accessible Normal mode mappings
 let g:mapleader = " "
-
-" deoplete tab-complete
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 " Quick save
 noremap <leader>w :w<CR>

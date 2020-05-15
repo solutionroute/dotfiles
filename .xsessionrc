@@ -1,9 +1,0 @@
-# Uncomment if your scenario benefits from .Xresources
-#if [ -f $HOME/.Xresources]; then
-  ## xrdb -merge ~/.Xresources
-#fi
-# 
-# Launched via lightdm
-#
-# For info on xsettings see ~/dotfiles/xsettings/README.md
-xsettingsd &

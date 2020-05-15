@@ -21,9 +21,6 @@ Dealing with your OS, setting alternatives, aliases, is up to you.
     2. ln -s ~/dotfiles/config/nvim .
     3. Start neovim:
         nvim
-        Plugins will install. After complete, restart nvim for 
-        good measure and run at the vim commandline:
 
-            :CocInstall coc-go
-
+The plugin manager will install and then install the plugins.
 Restart `nvim` for good measure and that's about it.

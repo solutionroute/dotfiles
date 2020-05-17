@@ -38,6 +38,15 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'itchyny/lightline.vim'
 call plug#end()
 
+" -- fdfind for fzf plugin ---------------------------
+"  fdfind respects .gitignore files. *useful*
+"   sudo apt install fd-find 
+if executable('fdfind')
+    let $FZF_DEFAULT_COMMAND='fdfind --type f'
+    let $FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
+    let $HAHA='lol'
+endif
+
 " -- Theme & Syntax  ---------------------------------
 set termguicolors
 highlight clear    

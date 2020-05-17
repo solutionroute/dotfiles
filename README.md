@@ -1,3 +1,3 @@
 # dotfiles
 
-    * [nvim.init](nvim.init) - simple and self-installing
+- [init.vim](init.vim) - simple and self-installing

@@ -1,6 +1,3 @@
-# Created by https://www.gitignore.io/api/vim
-
-### Vim ###
 # swap
 .sw[a-p]
 .*.sw[a-p]
@@ -9,7 +6,8 @@ Session.vim
 # temporary
 .netrwhist
 *~
-# auto-generated tag files
-tags
+# plugin related
 autoload
 plugged
+# vim spelling
+spell.en.add

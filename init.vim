@@ -2,20 +2,23 @@
 "
 " Last updated May 2020, aiming for minimalism:
 "
-"   - No attempt to remain compatible with Vim.
-"   - Trimming out all non essential settings/defaults already set by Neovim.
+"   - No attempt to remain compatible with Vim. May or may not work.
+"   - Making an attempt to avoid setting things that are already set
+"     by default in nvim
+"     fofofo
 "
-" Note: Leader is defined as " " (spacebar in normal mode), and handy here:
+" Note: Leader is defined as " " (spacebar in normal mode). Often used:
+"
 "   - Leader-w saves files
-"   - Leader-so reloads this file
-"   - Leader-ei edits this initialization file
+"   - Leader-so reloads this init.vim ($MYVIMRC)
+"   - Leader-ei edits this init.vim 
 "
 " See Key Mapping section for all key mappings and comments.
 "
 " Issues? Try running :checkhealth
 
 " -- Plugins -----------------------------------------
-" Remember to :PlugInstall and once in a while run :PlugUpdate/PlugUpgrade
+" Remember to once in a while run :PlugUpdate/PlugUpgrade
 "
 " Auto-download vim-plug if this is a new installation
 if empty(glob('~/.config/nvim/autoload/plug.vim'))
@@ -71,6 +74,7 @@ set shiftwidth=4
 set softtabstop=4
 set backspace=indent,eol,start          " Let Backspace do more things 
 set ffs=unix,dos,mac                    " file format preferences, in order
+set hidden                              " open a new file with unsaved changes in current buf
 filetype off
 filetype plugin indent on
 
@@ -131,7 +135,7 @@ augroup config
     autocmd BufNewFile,BufRead *.html,*.htm,*.gohtml,*.tpl  setf html
 augroup end
 
-" A tweak gor vim-go, auto add imports on save
+" A tweak for vim-go, auto add imports on save
 let g:go_imports_autosave = 1
 
 " -- A Gift ------------------------------------------
